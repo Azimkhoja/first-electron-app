@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path')
+require('update-electron-app')()
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -10,7 +11,8 @@ const createWindow = () => {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadURL('https://qulay-savdo.oxygenhouse.uz')
+  // win.loadFile('index.html')
 }
 
 app.whenReady().then(() => {
